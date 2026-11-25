@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Pultos Könyve | Itallap és Készletszűrő</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/stilus.css">
+  <script src="js/adatok.js" defer></script>
+  <script src="js/megjelenites.js" defer></script>
+  <script src="js/fooldal.js" defer></script>
+</head>
+<body>
+  <header class="fejlec">
+    <div class="fejlec-belso">
+      <h1>A Pultos Könyve</h1>
+      <p class="alcim">Klasszikus és modern koktélok itallapja</p>
+      <nav class="menu" aria-label="Fő navigáció">
+        <ul class="menu-lista">
+          <li><a href="index.html" class="aktiv" aria-current="page">Itallap</a></li>
+          <li><a href="poharak.html">Poharak</a></li>
+          <li><a href="tortenet.html">Történet</a></li>
+          <li><a href="bekuldes.html">Recept beküldése</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="elrendezes">
+    <aside id="szuro" class="oldalsav">
+      <h2 class="oldalsav-cim">A Bárpult Készlete</h2>
+      <form id="szuro-urlap" class="urlap">
+        <div class="mezo">
+          <label for="kereso" class="mezo-cimke">Keresés koktélnévre</label>
+          <input type="text" id="kereso" placeholder="Pl. Negroni, Mojito, Baby Eskimo...">
+          <div class="gombok">
+            <button type="submit" class="gomb">Keresés</button>
+            <button type="button" id="veletlen-gomb" class="gomb gomb-masodlagos">Véletlen koktél</button>
+            <button type="button" id="torles-gomb" class="gomb gomb-masodlagos">Törlés</button>
+          </div>
+        </div>
+
+        <p id="allapot" class="visszajelzes" aria-live="polite">Koktélok betöltése...</p>
+
+        <div class="keszlet">
+          <h3 class="keszlet-cim">Mi van otthon?</h3>
+          <p class="keszlet-megjegyzes">Pipáld be az otthoni alapanyagokat a pontos készletszűréshez.</p>
+          <div class="mezo">
+            <label for="alapanyag-kereso" class="mezo-cimke">Alapanyag szűrése</label>
+            <input type="text" id="alapanyag-kereso" placeholder="Alapanyag keresése (pl. rum, lime)...">
+          </div>
+
+          <div class="keszlet-csoport">
+            <span class="csoport-cim">Alkoholok</span>
+            <div id="alkohol-lista" class="jelolo-lista"></div>
+          </div>
+
+          <div class="keszlet-csoport">
+            <span class="csoport-cim">Keverők és levek</span>
+            <div id="kevero-lista" class="jelolo-lista"></div>
+          </div>
+
+          <div class="keszlet-csoport">
+            <span class="csoport-cim">Gyümölcsök és ízesítők</span>
+            <div id="gyumolcs-lista" class="jelolo-lista"></div>
+          </div>
+        </div>
+      </form>
+    </aside>
+
+    <div class="fo-resz">
+      <article id="adatlap" class="itallap-kartya">
+        <div class="itallap-fejlec">
+          <span class="felirat">Kiemelt tétel az itallapról</span>
+          <h2 id="ital-nev">Koktél betöltése...</h2>
+          <p class="meta-sor">
+            <span id="ital-tipus">Kategória betöltése</span>
+            <span class="elvalaszto">&bull;</span>
+            <span id="ital-kategoria">Italtípus</span>
+            <span class="elvalaszto">&bull;</span>
+            <span id="ital-pohar">Pohár</span>
+          </p>
+        </div>
+
+        <div class="itallap-torzs">
+          <div class="foto-oszlop">
+            <img id="ital-kep" src="img/alap-koktel.svg" alt="Kiválasztott koktél illusztrációja">
+          </div>
+
+          <div class="recept-oszlop">
+            <h3 class="alfejezet">Hozzávalók</h3>
+            <ul id="hozzavalok-lista">
+              <li>Alapanyagok betöltése folyamatban...</li>
+            </ul>
+
+            <div class="elkeszites">
+              <h3 class="alfejezet">Elkészítés</h3>
+              <p id="ital-leiras">Válassz egy italt a recepttárból vagy használd a készletszűrőt a részletes elkészítési leírás megtekintéséhez.</p>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <section id="talalatok" class="szekcio">
+        <div class="szekcio-fejlec">
+          <h2>Recepttár</h2>
+          <p class="szekcio-alcim">Válassz bármelyik tételt a fenti itallap megnyitásához</p>
+        </div>
+
+        <div class="tablazat-gorgetheto">
+          <table class="tabla">
+            <caption>Találati koktélok listája</caption>
+            <thead>
+              <tr>
+                <th scope="col">Koktél neve</th>
+                <th scope="col">Típus</th>
+                <th scope="col">Pohár</th>
+                <th scope="col">Összetevők</th>
+                <th scope="col">Művelet</th>
+              </tr>
+            </thead>
+            <tbody id="tablazat-torzs"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="lablec">
+    <p>A Pultos Könyve &middot; Klasszikus és modern koktélok gyűjteménye</p>
+  </footer>
+</body>
+</html>

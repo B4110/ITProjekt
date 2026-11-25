@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" width="220" height="220" role="img" aria-label="Martini pohár">
+  <rect width="220" height="220" fill="#09110d"/>
+  <rect x="10" y="10" width="200" height="200" fill="none" stroke="#24382d" stroke-width="1.5"/>
+  <rect x="16" y="16" width="188" height="188" fill="none" stroke="#c5a059" stroke-width="1"/>
+  <polygon points="56,58 164,58 110,124" fill="#112019" stroke="#c5a059" stroke-width="2"/>
+  <polygon points="70,75 150,75 110,122" fill="#c5a059" fill-opacity="0.22"/>
+  <line x1="110" y1="124" x2="110" y2="180" stroke="#c5a059" stroke-width="2.2"/>
+  <line x1="80" y1="180" x2="140" y2="180" stroke="#c5a059" stroke-width="2.5"/>
+  <line x1="142" y1="42" x2="100" y2="104" stroke="#dfc07c" stroke-width="1.6"/>
+  <circle cx="122" cy="72" r="6" fill="#112019" stroke="#dfc07c" stroke-width="1.6"/>
+  <circle cx="112" cy="86" r="6" fill="#112019" stroke="#dfc07c" stroke-width="1.6"/>
+</svg>

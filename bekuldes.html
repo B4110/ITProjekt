@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A Pultos Könyve | Recept beküldése</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/stilus.css">
+  <script src="js/bekuldes.js" defer></script>
+</head>
+<body>
+  <header class="fejlec">
+    <div class="fejlec-belso">
+      <h1>A Pultos Könyve</h1>
+      <p class="alcim">Klasszikus és modern koktélok itallapja</p>
+      <nav class="menu" aria-label="Fő navigáció">
+        <ul class="menu-lista">
+          <li><a href="index.html">Itallap</a></li>
+          <li><a href="poharak.html">Poharak</a></li>
+          <li><a href="tortenet.html">Történet</a></li>
+          <li><a href="bekuldes.html" class="aktiv" aria-current="page">Recept beküldése</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="aloldal szuk-tartalom">
+    <section class="itallap-kartya">
+      <div class="itallap-fejlec">
+        <span class="felirat">Vendégkönyv és receptgyűjtemény</span>
+        <h2>Saját koktélrecept beküldése</h2>
+        <p class="szekcio-alcim">Küldd be kedvenc klasszikus vagy saját fejlesztésű receptedet az itallap gyűjteményébe</p>
+      </div>
+
+      <form id="recept-urlap" class="urlap">
+        <div class="mezo">
+          <label for="nev" class="mezo-cimke">Koktél neve *</label>
+          <input type="text" id="nev" name="nev" required minlength="2" placeholder="Pl. Füstös Rozmaring Sour">
+        </div>
+
+        <div class="mezo">
+          <label for="email" class="mezo-cimke">Beküldő e-mail címe *</label>
+          <input type="email" id="email" name="email" required placeholder="nev@pelda.hu">
+        </div>
+
+        <div class="mezo-sor">
+          <div class="mezo">
+            <label for="ido" class="mezo-cimke">Elkészítési idő (perc, 1–30) *</label>
+            <input type="number" id="ido" name="ido" min="1" max="30" required placeholder="5">
+          </div>
+
+          <div class="mezo">
+            <label for="kategoria" class="mezo-cimke">Kategória *</label>
+            <select id="kategoria" name="kategoria" required>
+              <option value="">Válassz kategóriát...</option>
+              <option value="Alkoholos">Alkoholos</option>
+              <option value="Alkoholmentes">Alkoholmentes</option>
+              <option value="Klasszikus">Klasszikus</option>
+              <option value="Signature">Signature</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mezo">
+          <label for="leiras" class="mezo-cimke">Elkészítés és hozzávalók *</label>
+          <textarea id="leiras" name="leiras" rows="4" required minlength="10" placeholder="Írd le a hozzávalók mennyiségét és az elkészítés lépéseit..."></textarea>
+        </div>
+
+        <div class="mezo jelolo">
+          <input type="checkbox" id="elfogad" name="elfogad" required>
+          <label for="elfogad">Hozzájárulok a beküldött recept megjelenítéséhez az oldalon *</label>
+        </div>
+
+        <div class="gombok">
+          <button type="submit" class="gomb">Recept beküldése</button>
+          <button type="reset" class="gomb gomb-masodlagos">Mezők törlése</button>
+        </div>
+      </form>
+
+      <p id="urlap-visszajelzes" class="visszajelzes" aria-live="polite">Töltsd ki a csillaggal jelölt mezőket, majd kattints a Recept beküldése gombra.</p>
+    </section>
+  </main>
+
+  <footer class="lablec">
+    <p>A Pultos Könyve &middot; Klasszikus és modern koktélok gyűjteménye</p>
+  </footer>
+</body>
+</html>
